@@ -37,15 +37,17 @@ local Window = Rayfield:CreateWindow({
 })
 
 local MainTab = Window:CreateTab("Player", nil) -- Title, Image
+
+
 local MainSection = MainTab:CreateSection("🚅Speed")
 
 local Button = MainTab:CreateButton({
    Name = "Normal speed",
    Callback = function()
-		local player = game.Players.LocalPlayer
-		local character = player.Character or player.CharacterAdded:Wait()
-		local humanoid = character:WaitForChild("Humanoid")
-		humanoid.WalkSpeed = 16
+      local player = game.Players.LocalPlayer
+      local character = player.Character or player.CharacterAdded:Wait()
+      local humanoid = character:WaitForChild("Humanoid")
+      humanoid.WalkSpeed = 16
    end,
 })
 
@@ -57,9 +59,27 @@ local Slider = MainTab:CreateSlider({
    CurrentValue = 16,
    Flag = "SpeedSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-   		local player = game.Players.LocalPlayer
-		local character = player.Character or player.CharacterAdded:Wait()
-		local humanoid = character:WaitForChild("Humanoid")
-		humanoid.WalkSpeed = (Value)
+         local player = game.Players.LocalPlayer
+      local character = player.Character or player.CharacterAdded:Wait()
+      local humanoid = character:WaitForChild("Humanoid")
+      humanoid.WalkSpeed = (Value)
+   end,
+})
+
+
+
+local BloxFuits = Window:CreateTab("🐉BloxFuits🐉",nil)
+
+local Slider = BloxFuits:CreateSlider({
+   Name = "Dashlenght",
+   Range = {1, 300},
+   Increment = 1,
+   Suffix = "Dash",
+   CurrentValue = 1,
+   Flag = "DashSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+         local player = game.Players.LocalPlayer
+         local character = player.Character or player.CharacterAdded:Wait()
+         character:SetAttribute("DashLenght",(Value))
    end,
 })

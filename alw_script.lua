@@ -83,3 +83,10 @@ local Slider = BloxFuits:CreateSlider({
          character:SetAttribute("Dash_Lenght",(Value))
    end,
 })
+
+local Button = BloxFuits:CreateButton({
+   Name = "redZ script",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))()
+   end,
+})

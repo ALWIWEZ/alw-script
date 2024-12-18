@@ -80,6 +80,6 @@ local Slider = BloxFuits:CreateSlider({
    Callback = function(Value)
          local player = game.Players.LocalPlayer
          local character = player.Character or player.CharacterAdded:Wait()
-         character:SetAttribute("DashLenght",(Value))
+         character:SetAttribute("Dash_Lenght",(Value))
    end,
 })

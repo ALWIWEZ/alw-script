@@ -90,7 +90,7 @@ local SliderJ = MainTab:CreateSlider({
          local player = game.Players.LocalPlayer
       local character = player.Character or player.CharacterAdded:Wait()
       local humanoid = character:WaitForChild("Humanoid")
-      humanoid.JumpPower = (Value)
+      humanoid.JumpLenght = (Value)
    end,
 })
 

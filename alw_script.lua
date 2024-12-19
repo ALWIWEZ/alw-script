@@ -67,6 +67,36 @@ local Slider = MainTab:CreateSlider({
 })
 
 
+local MainSection = MainTab:CreateSection("🦘Jump")
+
+local Button = MainTab:CreateButton({
+   Name = "Normal JumpPower",
+   Callback = function()
+      local player = game.Players.LocalPlayer
+      local character = player.Character or player.CharacterAdded:Wait()
+      local humanoid = character:WaitForChild("Humanoid")
+      humanoid.JumpPower = 50
+   end,
+})
+
+local Slider = MainTab:CreateSlider({
+   Name = "JumpPower",
+   Range = {50, 300},
+   Increment = 1,
+   Suffix = "Speed",
+   CurrentValue = 50,
+   Flag = "SpeedSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+         local player = game.Players.LocalPlayer
+      local character = player.Character or player.CharacterAdded:Wait()
+      local humanoid = character:WaitForChild("Humanoid")
+      humanoid.JumpPower = (Value)
+   end,
+})
+
+
+
+
 
 local BloxFuits = Window:CreateTab("🐉BloxFuits🐉",nil)
 
@@ -84,9 +114,3 @@ local Slider = BloxFuits:CreateSlider({
    end,
 })
 
-local Button = BloxFuits:CreateButton({
-   Name = "redZ script",
-   Callback = function()
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))()
-   end,
-})

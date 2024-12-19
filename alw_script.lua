@@ -118,16 +118,16 @@ local SliderH = MainTab:CreateSlider({
 local BloxFuits = Window:CreateTab("🐉BloxFuits🐉",nil)
 
 local Slider = BloxFuits:CreateSlider({
-   Name = "Dashlenght",
-   Range = {1, 300},
+   Name = "SpeedMultipliyer",
+   Range = {1, 200},
    Increment = 1,
-   Suffix = "Dash",
+   Suffix = "SpeedMultipliyer",
    CurrentValue = 1,
-   Flag = "DashSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Flag = "SpeedMultipliyerSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
          local player = game.Players.LocalPlayer
          local character = player.Character or player.CharacterAdded:Wait()
-         character:SetAttribute("Dash_Lenght",(Value))
+         character:SetAttribute("SpeedMultipliyer",Value)
    end,
 })
 

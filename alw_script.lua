@@ -41,7 +41,7 @@ local MainTab = Window:CreateTab("Player", nil) -- Title, Image
 
 local MainSection = MainTab:CreateSection("🚅Speed")
 
-local Button = MainTab:CreateButton({
+local ButtonS = MainTab:CreateButton({
    Name = "Normal speed",
    Callback = function()
       local player = game.Players.LocalPlayer
@@ -51,7 +51,7 @@ local Button = MainTab:CreateButton({
    end,
 })
 
-local Slider = MainTab:CreateSlider({
+local SliderS = MainTab:CreateSlider({
    Name = "Walkspeed",
    Range = {10, 300},
    Increment = 1,
@@ -69,7 +69,7 @@ local Slider = MainTab:CreateSlider({
 
 local MainSection = MainTab:CreateSection("🦘Jump")
 
-local Button = MainTab:CreateButton({
+local ButtonJ = MainTab:CreateButton({
    Name = "Normal JumpPower",
    Callback = function()
       local player = game.Players.LocalPlayer
@@ -79,7 +79,7 @@ local Button = MainTab:CreateButton({
    end,
 })
 
-local Slider = MainTab:CreateSlider({
+local SliderJ = MainTab:CreateSlider({
    Name = "JumpPower",
    Range = {50, 300},
    Increment = 1,

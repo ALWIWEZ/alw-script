@@ -85,15 +85,32 @@ local SliderJ = MainTab:CreateSlider({
    Increment = 1,
    Suffix = "Speed",
    CurrentValue = 50,
-   Flag = "SpeedSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Flag = "JumpSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
          local player = game.Players.LocalPlayer
       local character = player.Character or player.CharacterAdded:Wait()
       local humanoid = character:WaitForChild("Humanoid")
-      humanoid.JumpLenght = (Value)
+      humanoid.JumpPower = (Value)
    end,
 })
 
+
+local MainSection = MainTab:CreateSection("💖Health")
+
+local SliderH = MainTab:CreateSlider({
+   Name = "health",
+   Range = {100, 50000},
+   Increment = 100,
+   Suffix = "Speed",
+   CurrentValue = 100,
+   Flag = "HealthSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+         local player = game.Players.LocalPlayer
+      local character = player.Character or player.CharacterAdded:Wait()
+      local humanoid = character:WaitForChild("Humanoid")
+      humanoid.Health = (Value)
+   end,
+})
 
 
 
